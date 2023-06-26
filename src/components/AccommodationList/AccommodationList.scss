@@ -1,0 +1,30 @@
+.accommodationList{
+    margin: 0 100px;
+    background-color: #F6F6F6;
+    padding: 60px;
+    border-radius: 25px;
+    margin-top: 43px;
+}
+
+.accommodationList_grid{
+    height: 829px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:  50px 60px;
+
+    &_item{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: #FF6060;
+        display: flex;
+        justify-content: flex-start;
+        align-items: end;
+
+        h2{
+            color:white;
+            padding: 20px;
+        }
+    }
+}
