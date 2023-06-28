@@ -1,3 +1,11 @@
 .banner_about{
     background-image: url(../../assets/Img-about.png);
 }
+
+.about_container{
+    margin: 38px 208px;
+
+    & > div{
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,43 @@
+
+
+
+.collapse_title{
+    background-color: #FF6060;
+    border-radius: 10px;
+    display: flex;
+    height: calc(52px - 10px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 2;
+
+    h2{
+        color:white;
+        font-size: 24px;
+    }
+    button{
+        background-color: transparent;
+        border: none;
+
+        i{
+            color:white;
+            font-size: 25px;
+        }
+    }
+}
+
+.collapse_active{
+    background-color: #F6F6F6;
+    padding: 20px;
+    margin: -10px 0;
+    z-index: -1;
+    position: relative;
+    p{
+        margin: -0px;
+        font-weight: 400;
+    }
+}
+
+.collapse_hidden{
+    display: none;
+}
