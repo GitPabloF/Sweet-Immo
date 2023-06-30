@@ -24,11 +24,22 @@
     #accommodation_img-3{
         display: none;
     }
+    #accommodation_img-4{
+        display: none;
+    }
+    #accommodation_img-5{
+        display: none;
+    }
+    #accommodation_img-6{
+        display: none;
+    }
     i{
         position: absolute;
         top: calc(207.5px - 40px);
         font-size: 80px;
-        color: white;
+        color: red;
+        z-index: 2;
+
     }
     .fa-angle-left{
         left: 23px;
@@ -78,6 +89,7 @@
     span{
         text-align:end;
         margin-right: 10px;
+        width: 50%;
     }
 
     .accommodation_host_img{
@@ -102,7 +114,7 @@
         i{
             font-size: 24px;
         }
-        .accommodation_rating_star_grey{
+        .rating_star_grey{
             color: #E3E3E3;
         }
     }
@@ -113,4 +125,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 76px;
+
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    .accommodation_equipments_li{
+        list-style: none;
+        padding: 0;
+        margin: 5px 0;
+    }
 }

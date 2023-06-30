@@ -490,7 +490,7 @@ export const datas = [
         },
         "rating": "3",
         "location": "Ile de France - La Défense",
-        "equipments": [
+        "": [
             "Baie vitrée",
             "Télévision",
             "Four",

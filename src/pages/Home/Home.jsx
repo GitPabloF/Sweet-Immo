@@ -6,7 +6,6 @@ import { useState } from 'react'
 export default function Home(){
 
     const [dataInfo, setDataInfo ] = useState([])
-    console.log('dataInfo Home' + dataInfo)
 
     return(
         <div>

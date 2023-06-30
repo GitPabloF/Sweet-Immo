@@ -18,7 +18,7 @@ const collapseChevron = isHidden ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevr
             <button onClick={ () => setHidden(isHidden === true ? false : true)}><i className={collapseChevron}></i></button>
         </div>
         <div className={collapseDescription} aria-hidden={collapseAria} aria-labelledby="collapse">
-            <p>{description}</p>
+            {description}
         </div>
     </div>
     )
