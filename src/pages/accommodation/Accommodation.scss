@@ -1,5 +1,4 @@
-
-.accommodation{
+.accommodation_container{
     margin: 0 100px;
 }
 
@@ -13,6 +12,15 @@
         z-index: 1;
         object-fit: cover;
         border-radius: 25px;
+    }
+
+    #img-status{
+        position: absolute;
+        color: white;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 24px;
+        z-index: 2;
     }
 
     i{

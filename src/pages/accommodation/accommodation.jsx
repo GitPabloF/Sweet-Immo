@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { datas } from '../../datas/datas'
 import './Accommodation.scss'
+import Header from '../../components/Header/Header'
 import Rating from '../../components/Rating/Rating'
 import Collapse from '../../components/Collapse/Collapse'
 
@@ -55,59 +56,72 @@ export default function Accommodation() {
 
     const [imgStatus, updateImgStatus] = useState(0)
 
-    const  goToNext = () => imgStatus >= data.pictures.length -1 ? updateImgStatus(1) : updateImgStatus( imgStatus + 1) 
-    const  goToPrevious = () => imgStatus <= 0 ? updateImgStatus(data.pictures.length -1) : updateImgStatus( imgStatus - 1) 
+    const goToNext = () =>
+        imgStatus >= data.pictures.length - 1
+            ? updateImgStatus(0)
+            : updateImgStatus(imgStatus + 1)
+    const goToPrevious = () =>
+        imgStatus <= 0
+            ? updateImgStatus(data.pictures.length - 1)
+            : updateImgStatus(imgStatus - 1)
 
     return (
         <div className="accommodation">
-            <div className="accommodation_img">
-                <img
-                    class="accommodation_img"
-                    id={`accommodation_img-${imgStatus + 1}`}
-                    src={data.pictures[imgStatus]}
-                    alt=""
-                />
-                <span onClick={goToPrevious}>
-                    <i className="fa-solid fa-angle-left"></i>
-                </span>
-                <span onClick={goToNext}>
-                    <i className="fa-solid fa-angle-right"></i>
-                </span>
-            </div>
-
-            <div className="accommodation_info">
-                <div className="accommodation_main-info">
-                    <h1>{data.title}</h1>
-                    <p>{data.location}</p>
-                    <div className="accommodation_tags">{dataTags}</div>
+            <Header />
+            <div className="accommodation_container">
+                <div className="accommodation_img">
+                    <img
+                        class="accommodation_img"
+                        id={`accommodation_img-${imgStatus + 1}`}
+                        src={data.pictures[imgStatus]}
+                        alt={`logement photo ${imgStatus + 1}`}
+                    />
+                    <span id='img-status'>{imgStatus +1}/{data.pictures.length}</span>
+                    <span onClick={goToPrevious}>
+                        <i className="fa-solid fa-angle-left" title="naviguer vers l'image précédente"></i>
+                    </span>
+                    <span onClick={goToNext}>
+                        <i className="fa-solid fa-angle-right" title="naviguer vers l'image suivante"></i>
+                    </span>
                 </div>
-                <div className="accommodation_host-rating">
-                    <div className="accommodation_host">
-                        <span>{data.host.name}</span>
-                        <div className="accommodation_host_img">
-                            <img src={data.host.picture} alt={data.host.name} />
+
+                <div className="accommodation_info">
+                    <div className="accommodation_main-info">
+                        <h1>{data.title}</h1>
+                        <p>{data.location}</p>
+                        <div className="accommodation_tags">{dataTags}</div>
+                    </div>
+                    <div className="accommodation_host-rating">
+                        <div className="accommodation_host">
+                            <span>{data.host.name}</span>
+                            <div className="accommodation_host_img">
+                                <img
+                                    src={data.host.picture}
+                                    alt={data.host.name}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="accommodation_rating" title={`note du logement ${data.rating}/5`}>
+                            <Rating isGrey={star1} />
+                            <Rating isGrey={star2} />
+                            <Rating isGrey={star3} />
+                            <Rating isGrey={star4} />
+                            <Rating isGrey={star5} />
                         </div>
                     </div>
-
-                    <div className="accommodation_rating">
-                        <Rating isGrey={star1} />
-                        <Rating isGrey={star2} />
-                        <Rating isGrey={star3} />
-                        <Rating isGrey={star4} />
-                        <Rating isGrey={star5} />
-                    </div>
                 </div>
-            </div>
 
-            <div className="accommodation_collapse">
-                <Collapse
-                    title="Description"
-                    description={<p>{data.description}</p>}
-                />
-                <Collapse
-                    title="Équipements"
-                    description={<ul>{dataEquipments}</ul>}
-                />
+                <div className="accommodation_collapse">
+                    <Collapse
+                        title="Description"
+                        description={<p>{data.description}</p>}
+                    />
+                    <Collapse
+                        title="Équipements"
+                        description={<ul>{dataEquipments}</ul>}
+                    />
+                </div>
             </div>
         </div>
     )

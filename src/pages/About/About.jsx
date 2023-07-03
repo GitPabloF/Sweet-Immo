@@ -1,10 +1,12 @@
 import Banner from '../../components/Banner/Banner'
 import './About.scss'
 import Collapse from '../../components/Collapse/Collapse'
+import Header from '../../components/Header/Header'
 
 export default function About() {
     return (
         <div className="about">
+            <Header isAboutPage={true}/> 
             <Banner title="" bannerClass="banner banner_about" />
             <div className="about_container">
                 <Collapse

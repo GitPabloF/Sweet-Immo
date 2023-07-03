@@ -19,11 +19,20 @@
         width: 100%;
         height: 100%;
         border-radius: 10px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
-        z-index: 2;
         position: relative;
 
+        .grey-gradient{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 10px;
+        }
+ 
+
         img{
+            position: relative;
             width: 100%;
             height: 100%;
             z-index: 1;
@@ -32,6 +41,7 @@
         }
 
         h2{
+            z-index: 2;
             position: absolute;
             color:white;
             padding: 20px;

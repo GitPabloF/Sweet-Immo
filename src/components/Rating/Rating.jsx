@@ -1,23 +1,9 @@
 
-export default function Rating({isGrey}){
+export default function Rating({isGrey, rating}){
 
     return(
     <span>
-        <i className={`fa-solid fa-star ${isGrey}`}></i>
+        <i className={`fa-solid fa-star ${isGrey}`} title={`étoile de notation`}></i>
     </span>
     )
 }
-
-
-{/* <span>
-<i className="fa-solid fa-star"></i>
-</span>
-<span>
-<i className="fa-solid fa-star"></i>
-</span>
-<span>
-<i className="fa-solid fa-star"></i>
-</span>
-<span>
-<i className="fa-solid fa-star accommodation_rating_"></i>
-</span> */}

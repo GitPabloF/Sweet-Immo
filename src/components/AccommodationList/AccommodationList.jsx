@@ -2,7 +2,6 @@ import './AccommodationList.scss'
 
 import { datas } from '../../datas/datas'
 import { Link } from 'react-router-dom'
-// import { useParams } from "react-router-dom"
 
 export default function AccommodationList() {
     return (
@@ -16,6 +15,7 @@ export default function AccommodationList() {
                             onClick={() => {}}
                         >
                             <div className="accommodationList_grid_item">
+                                <div className='grey-gradient'></div>
                                 <h2> {data.title}</h2>
                                 <img src={data.cover} alt={data.title} />
                             </div>
