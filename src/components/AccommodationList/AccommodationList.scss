@@ -1,9 +1,8 @@
 .accommodationList{
-    margin: 0 100px;
+    margin: 43px 7% 50px 7%;
     background-color: #F6F6F6;
     padding: 60px;
     border-radius: 25px;
-    margin-top: 43px;
 }
 
 .accommodationList_grid{
@@ -11,7 +10,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap:  50px 60px;
+    gap:  4.83% 6%;
     position: relative;
 
 
@@ -47,5 +46,28 @@
             padding: 20px;
             bottom: 0;
         }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .accommodationList_grid{
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        &_item{
+            height: 255px;
+        }
+
+        #accommodationList_grid_item-4, #accommodationList_grid_item-5, #accommodationList_grid_item-6 {
+        display: none;
+        }
+    }
+
+    .accommodationList{
+        margin: 22px 20px 27px 20px;
+        padding: 0;
+        background-color: transparent;
+        height: 850px;
     }
 }

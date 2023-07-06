@@ -7,9 +7,20 @@
 }
 
 .about_container{
-    margin: 38px 208px;
+    margin: 38px 14%;
 
     & > div{
         margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .about_container{
+        margin: 19px;
+
+        & > div{
+            margin-bottom: 20px;
+        }
     }
 }

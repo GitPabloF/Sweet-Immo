@@ -31,11 +31,30 @@
     z-index: -1;
     position: relative;
     p{
-        margin: -0px;
+        margin: 0px;
         font-weight: 400;
     }
 }
 
 .collapse_hidden{
     display: none;
+}
+
+@media screen and (max-width: 768px){
+    .collapse_title{
+        height: 10px;
+        padding: 10px;
+
+        h2{
+            font-size: 13px;
+        }
+
+        button i{
+            font-size: 18px;
+        }
+    }
+
+    .collapse_active p{
+        font-size: 12px;
+    }
 }

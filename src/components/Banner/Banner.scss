@@ -1,5 +1,5 @@
 .banner{
-    margin: 0 100px;
+    margin: 0 7%;
     height: 223px;
     border-radius: 25px;
     display: flex;
@@ -11,12 +11,25 @@
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: multiply; 
     
-    h1{
+    p{
+        font-weight: 500;
         color:white;
-        font-size: 48px;
+        font-size: 3.3vw;
     }
     &_home{
         background-image: url('../../assets/Img-source.png');
     }
+
+    @media screen and (max-width:768px) {
+    margin: 0 20px;
+    height: 111px;
+        
+        p{
+            font-size: 6.3vw;
+            width: 70%;
+        }
+    }
 }
+
+
 

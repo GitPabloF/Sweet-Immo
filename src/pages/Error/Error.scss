@@ -17,4 +17,22 @@
         font-size: 18px;
         margin: 0 0 139px 0;
     }
+
+    @media screen and (max-width: 768px){
+        p{
+            font-size: 96px;
+            margin: 113px 0;
+        }
+
+        h1{
+            font-size: 18px;
+            margin-bottom: 113px;
+            text-align: center;
+        }
+
+        .error_link{
+            font-size: 12px;
+            margin-bottom: 113px;
+        }
+    }
 }

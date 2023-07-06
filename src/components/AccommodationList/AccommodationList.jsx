@@ -7,10 +7,11 @@ export default function AccommodationList() {
     return (
         <div className="accommodationList">
             <div className="accommodationList_grid">
-                {datas.slice(0, 6).map((data) => {
+                {datas.slice(0, 6).map((data, i) => {
                     return (
                         <Link
                             key={data.id}
+                            id={`accommodationList_grid_item-${i+1}`}
                             to={`/accommodation/${data.id}`}
                             onClick={() => {}}
                         >

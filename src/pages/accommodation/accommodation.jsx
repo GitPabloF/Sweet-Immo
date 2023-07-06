@@ -9,6 +9,14 @@ import Collapse from '../../components/Collapse/Collapse'
 export default function Accommodation() {
     let { id } = useParams()
 
+    // TRY TO return to error page if id doesn't exist
+    // const datasID = datas.map( data => data.id)
+    // const dataID = datasID.find((item) => {
+    //     if(item.id === id){
+    //         console.log('ok')
+    //     }
+    // })
+
     // to get all the datas of the element where the id is the present
     const data = datas.find((item) => item.id === id)
 
@@ -54,6 +62,8 @@ export default function Accommodation() {
         )
     })
 
+    // to save and uptdate the state of the picture 
+
     const [imgStatus, updateImgStatus] = useState(0)
 
     const goToNext = () =>
@@ -64,6 +74,12 @@ export default function Accommodation() {
         imgStatus <= 0
             ? updateImgStatus(data.pictures.length - 1)
             : updateImgStatus(imgStatus - 1)
+
+    // to hide element when there is only one picture
+
+    console.log(data.pictures.length)
+    const isOneImage = data.pictures.length <= 1 ? 'hide' : ''
+
 
     return (
         <div className="accommodation">
@@ -76,12 +92,12 @@ export default function Accommodation() {
                         src={data.pictures[imgStatus]}
                         alt={`logement photo ${imgStatus + 1}`}
                     />
-                    <span id='img-status'>{imgStatus +1}/{data.pictures.length}</span>
+                    <span className={isOneImage} id='img-status'>{imgStatus +1}/{data.pictures.length}</span>
                     <span onClick={goToPrevious}>
-                        <i className="fa-solid fa-angle-left" title="naviguer vers l'image précédente"></i>
+                        <i className={`fa-solid fa-angle-left ${isOneImage}`} title="naviguer vers l'image précédente"></i>
                     </span>
                     <span onClick={goToNext}>
-                        <i className="fa-solid fa-angle-right" title="naviguer vers l'image suivante"></i>
+                        <i className={`fa-solid fa-angle-right ${isOneImage}`} title="naviguer vers l'image suivante"></i>
                     </span>
                 </div>
 

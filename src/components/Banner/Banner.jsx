@@ -4,7 +4,7 @@ export default function Banner({title, bannerClass}){
 
     return(
         <div className={bannerClass}>
-            <h1>{title}</h1>
+            <p>{title}</p>
         </div>
     )
 }
