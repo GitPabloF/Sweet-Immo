@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { datas } from '../../datas/datas'
 import './Accommodation.scss'
@@ -8,14 +8,43 @@ import Collapse from '../../components/Collapse/Collapse'
 
 export default function Accommodation() {
     let { id } = useParams()
+    const navigate = useNavigate()
+    const [accommodation, setAccommodation] = useState({})
 
     // TRY TO return to error page if id doesn't exist
-    // const datasID = datas.map( data => data.id)
-    // const dataID = datasID.find((item) => {
-    //     if(item.id === id){
-    //         console.log('ok')
+    // const datasID = datas.map(data => data.id)
+    // console.log(datasID[0])
+
+    useEffect(() => {
+        loadData(id)
+    }, [])
+
+    function loadData(id) {
+        let found = false;
+        datas.map((data, i) => {
+            if (data.id === id) {
+                setAccommodation(data)
+                found = true
+                console.log('if', data.id)
+                return
+            }
+        })
+        if (!found) {
+            console.log('no', accommodation)
+            navigate('/')
+        }
+    }
+
+    // for(let i = 0; i < datasID.length ; i++ ){
+    //     let number = 0
+    //     if(id === datasID[i]){
+    //         number++
     //     }
-    // })
+    //     console.log(number)
+    //     if(number === 0){
+    //         window.open('/')
+    //     }
+    // }
 
     // to get all the datas of the element where the id is the present
     const data = datas.find((item) => item.id === id)
@@ -24,6 +53,7 @@ export default function Accommodation() {
     const dataTags = data.tags.map((tag) => {
         return <span>{tag}</span>
     })
+
 
     // based on the (1 to 5) rating return the gray class for the star if needed
     const dataRating = data.rating
@@ -62,7 +92,7 @@ export default function Accommodation() {
         )
     })
 
-    // to save and uptdate the state of the picture 
+    // to save and uptdate the state of the picture
 
     const [imgStatus, updateImgStatus] = useState(0)
 
@@ -76,10 +106,7 @@ export default function Accommodation() {
             : updateImgStatus(imgStatus - 1)
 
     // to hide element when there is only one picture
-
-    console.log(data.pictures.length)
     const isOneImage = data.pictures.length <= 1 ? 'hide' : ''
-
 
     return (
         <div className="accommodation">
@@ -92,12 +119,20 @@ export default function Accommodation() {
                         src={data.pictures[imgStatus]}
                         alt={`logement photo ${imgStatus + 1}`}
                     />
-                    <span className={isOneImage} id='img-status'>{imgStatus +1}/{data.pictures.length}</span>
+                    <span className={isOneImage} id="img-status">
+                        {imgStatus + 1}/{data.pictures.length}
+                    </span>
                     <span onClick={goToPrevious}>
-                        <i className={`fa-solid fa-angle-left ${isOneImage}`} title="naviguer vers l'image précédente"></i>
+                        <i
+                            className={`fa-solid fa-angle-left ${isOneImage}`}
+                            title="naviguer vers l'image précédente"
+                        ></i>
                     </span>
                     <span onClick={goToNext}>
-                        <i className={`fa-solid fa-angle-right ${isOneImage}`} title="naviguer vers l'image suivante"></i>
+                        <i
+                            className={`fa-solid fa-angle-right ${isOneImage}`}
+                            title="naviguer vers l'image suivante"
+                        ></i>
                     </span>
                 </div>
 
@@ -118,12 +153,23 @@ export default function Accommodation() {
                             </div>
                         </div>
 
-                        <div className="accommodation_rating" title={`note du logement ${data.rating}/5`}>
-                            <Rating isGrey={star1} />
+                        <div
+                            className="accommodation_rating"
+                            title={`note du logement ${data.rating}/5`}
+                        >
+                            {[...Array(5).keys()].map((n)=>{
+                                if(n+1 <= data.rating){
+                                    <Rating isGrey='' key={n} />
+                                }else{
+                                    <Rating isGrey='rating_star_grey' key={n}/>
+                                }
+            
+                            })}
+                            {/* <Rating isGrey={star1} />
                             <Rating isGrey={star2} />
                             <Rating isGrey={star3} />
                             <Rating isGrey={star4} />
-                            <Rating isGrey={star5} />
+                            <Rating isGrey={star5} /> */}
                         </div>
                     </div>
                 </div>
