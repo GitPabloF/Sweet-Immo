@@ -1,6 +1,6 @@
-import './Error.scss'
+import './error.scss'
 import { Link } from 'react-router-dom'
-import Header from '../../components/Header/Header'
+import Header from '../../components/header/header'
 
 export default function Error() {
     return (

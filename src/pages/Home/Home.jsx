@@ -1,19 +1,17 @@
-import Banner from '../../components/Banner/Banner'
-import AccommodationList from '../../components/AccommodationList/AccommodationList'
+import Banner from '../../components/banner/banner'
+import AccommodationList from '../../components/accommodationList/accommodationList'
 import { useState } from 'react'
-import Header from '../../components/Header/Header'
+import Header from '../../components/header/header'
 
-export default function Home(){
-
-    const isHomePage = true
-
-    const [dataInfo, setDataInfo ] = useState([])
-
-    return(
+export default function Home() {
+    return (
         <div>
-            <Header isHomePage={true}/>
-            <Banner title='Chez vous, partout et ailleurs' bannerClass='banner banner_home'/>
-            <AccommodationList dataInfo={dataInfo} setDataInfo={setDataInfo} />
+            <Header isHomePage={true} />
+            <Banner
+                title="Chez vous, partout et ailleurs"
+                bannerClass="banner banner_home"
+            />
+            <AccommodationList />
         </div>
     )
 }

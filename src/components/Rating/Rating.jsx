@@ -1,4 +1,3 @@
-
 export default function Rating({isGrey, rating}){
 
     return(

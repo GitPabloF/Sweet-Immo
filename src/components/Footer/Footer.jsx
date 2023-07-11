@@ -1,4 +1,4 @@
-import './Footer.scss'
+import './footer.scss'
 import logo from '../../assets/Logo_BW.png'
 
 export default function Footer(){

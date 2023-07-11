@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { datas } from '../../datas/datas'
-import './Accommodation.scss'
-import Header from '../../components/Header/Header'
-import Rating from '../../components/Rating/Rating'
-import Collapse from '../../components/Collapse/Collapse'
+import './accommodation.scss'
+import Header from '../../components/header/header'
+import Rating from '../../components/rating/rating'
+import Collapse from '../../components/collapse/collapse'
 
 export default function Accommodation() {
     let { id } = useParams()
