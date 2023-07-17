@@ -62,12 +62,14 @@ export default function Accommodation() {
             : updateImgStatus(imgStatus - 1)
 
     // hide element when there is only one picture
-    const isOneImage = () =>
-        accommodationData.pictures.length <= 1 ? 'hide' : ''
+    function isOneImage() {
+        return accommodationData.pictures.length <= 1 ? 'hide' : ''
+    }
 
     return (
-        <div className="accommodation">
+        <div className="accommodation container">
             <Header />
+
             {accommodationData && (
                 <div className="accommodation_container">
                     <div className="accommodation_img">
@@ -77,18 +79,18 @@ export default function Accommodation() {
                             src={accommodationData.pictures[imgStatus]}
                             alt={`logement photo ${imgStatus + 1}`}
                         />
-                        <span className={isOneImage} id="img-status">
+                        <span className={isOneImage()} id="img-status">
                             {imgStatus + 1}/{accommodationData.pictures.length}
                         </span>
                         <span onClick={goToPrevious}>
                             <i
-                                className={`fa-solid fa-angle-left ${isOneImage}`}
+                                className={`fa-solid fa-angle-left ${isOneImage()}`}
                                 title="naviguer vers l'image précédente"
                             ></i>
                         </span>
                         <span onClick={goToNext}>
                             <i
-                                className={`fa-solid fa-angle-right ${isOneImage}`}
+                                className={`fa-solid fa-angle-right ${isOneImage()}`}
                                 title="naviguer vers l'image suivante"
                             ></i>
                         </span>

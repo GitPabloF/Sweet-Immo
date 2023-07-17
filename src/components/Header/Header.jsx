@@ -1,5 +1,5 @@
 import './header.scss'
-import logo  from '../../assets/LOGOKasa.png'
+import logo  from '../../assets/LogoKasaS.png'
 import { Link } from 'react-router-dom'
 
 export default function Header({isHomePage, isAboutPage}){

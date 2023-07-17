@@ -1,11 +1,10 @@
 import Banner from '../../components/banner/banner'
 import AccommodationList from '../../components/accommodationList/accommodationList'
-import { useState } from 'react'
 import Header from '../../components/header/header'
 
 export default function Home() {
     return (
-        <div>
+        <div id='home' className='container'>
             <Header isHomePage={true} />
             <Banner
                 title="Chez vous, partout et ailleurs"

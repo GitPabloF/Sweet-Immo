@@ -6,14 +6,19 @@ import { datas } from '../../datas/datas'
 export default function AccommodationList() {
     const [accommodationsDatas, setAccommodationsDatas] = useState([])
 
-    useEffect(() => {
+    const [page, setPage] = useState(0)
+
+    function getPaginatedData(start, end){
         if(datas){
-            const datasSliced = datas.slice(0, 6)
+            const datasSliced = datas.slice(start, end)
             setAccommodationsDatas(datasSliced)
         }else{
             console.log('error : datas not found')
         }
-        
+    }
+
+    useEffect(() => {
+        getPaginatedData(page, page+6)
     }, [])
 
     return (

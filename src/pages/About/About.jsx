@@ -5,7 +5,7 @@ import Header from '../../components/header/header'
 
 export default function About() {
     return (
-        <div className="about">
+        <div className="about container">
             <Header isAboutPage={true}/> 
             <Banner title="" bannerClass="banner banner_about" />
             <div className="about_container">
