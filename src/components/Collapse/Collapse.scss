@@ -43,7 +43,6 @@
     z-index: -1;
     position: relative;
     overflow: hidden;
-    // max-height: 500px;
     transition: all .4s;
     transform-origin: top;
     transform: scaleY(1); 
@@ -54,7 +53,6 @@
 
     &-hidden{
         transform: scaleY(0);
-        // height: 0;
     }
 }
 
