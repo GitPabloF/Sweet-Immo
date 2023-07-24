@@ -1,24 +1,24 @@
-import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import './accommodationList.scss'
+import AccommodationCard from '../accommodationCard/accommodationCard'
 import { datas } from '../../datas/datas'
 
 export default function AccommodationList() {
     const [accommodationsDatas, setAccommodationsDatas] = useState([])
 
-    const [page, setPage] = useState(0)
-
-    function getPaginatedData(start, end){
-        if(datas){
-            const datasSliced = datas.slice(start, end)
+    // store the data sliced in the state if there is data
+    function getPaginatedData() {
+        if (datas) {
+            const datasSliced = datas.slice()
             setAccommodationsDatas(datasSliced)
-        }else{
+        } else {
             console.log('error : datas not found')
         }
     }
 
+    // call the function at the loading of the page
     useEffect(() => {
-        getPaginatedData(page, page+6)
+        getPaginatedData()
     }, [])
 
     return (
@@ -26,17 +26,11 @@ export default function AccommodationList() {
             <div className="accommodationList_grid">
                 {accommodationsDatas.map((data, i) => {
                     return (
-                        <Link
-                            key={data.id}
-                            id={`accommodationList_grid_item-${i + 1}`}
-                            to={`/accommodation/${data.id}`}
-                        >
-                            <div className="accommodationList_grid_item">
-                                <div className="grey-gradient"></div>
-                                <h2> {data.title}</h2>
-                                <img src={data.cover} alt={data.title} />
-                            </div>
-                        </Link>
+                        <AccommodationCard
+                            dataID={data.id}
+                            dataTitle={data.title}
+                            dataCover={data.cover}
+                        />
                     )
                 })}
             </div>

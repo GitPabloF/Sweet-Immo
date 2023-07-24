@@ -3,23 +3,21 @@
     background-color: #F6F6F6;
     padding: 60px;
     border-radius: 25px;
+
 }
 
 .accommodationList_grid{
-    height: 829px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap:  4.83% 6%;
+    gap: 50px;
     position: relative;
-
+    
 
     &_item{
         width: 100%;
-        height: 100%;
+        height: 340px;
         border-radius: 10px;
         position: relative;
-
         .grey-gradient{
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
         z-index: 2;
@@ -54,6 +52,8 @@
         height: auto;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
+
 
         &_item{
             height: 255px;
@@ -68,6 +68,5 @@
         margin: 22px 20px 27px 20px;
         padding: 0;
         background-color: transparent;
-        height: 850px;
     }
 }
