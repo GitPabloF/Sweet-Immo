@@ -1,0 +1,43 @@
+.banner{
+    margin: 0 7%;
+    height: 223px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply; 
+    
+    p{
+        font-weight: 500;
+        color:white;
+        font-size: 48px;
+    }
+    &_home{
+        background-image: url('../../assets/Img-source.png');
+    }
+
+    @media screen and (max-width:768px) {
+    margin: 0 20px;
+    height: 111px;
+        
+        p{
+            font-size: 6.3vw;
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width:900px){
+        p{
+            font-size: 4.8vw;
+        }
+    }
+
+    
+}
+
+
+
