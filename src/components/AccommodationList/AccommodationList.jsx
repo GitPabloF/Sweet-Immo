@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import './accommodationList.scss'
-import AccommodationCard from '../accommodationCard/accommodationCard'
+import './accommodationlist.scss'
+import AccommodationCard from '../accommodationcard/accommodationcard'
 import { datas } from '../../datas/datas'
 
 export default function AccommodationList() {

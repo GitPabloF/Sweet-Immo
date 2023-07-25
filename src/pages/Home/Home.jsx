@@ -1,5 +1,5 @@
 import Banner from '../../components/banner/banner'
-import AccommodationList from '../../components/accommodationList/accommodationList'
+import AccommodationList from '../../components/accommodationlist/accommodationlist'
 import Header from '../../components/header/header'
 
 export default function Home() {
