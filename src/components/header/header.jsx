@@ -1,17 +1,32 @@
 import './header.scss'
-import logo  from '../../assets/LogoKasaS.png'
+import logo from '../../assets/Logo.png'
 import { Link } from 'react-router-dom'
 
-export default function Header({isHomePage, isAboutPage}){
-
-    return(
+export default function Header({ isHomePage, isAboutPage }) {
+    return (
         <header>
-            <Link to='/'>
-                <img src={logo} alt='logo Kasa'/>
+            <Link to="/">
+                <img src={logo} alt="logo Sweet Immo" />
             </Link>
             <nav>
-                <Link to='/' id="nav-link-home" className={isHomePage ? 'nav-link nav-link_active' :'nav-link'} >Accueil</Link>
-                <Link to='/about' id="nav-link-about" className={isAboutPage ? 'nav-link nav-link_active' :'nav-link'}>A propos</Link>
+                <Link
+                    to="/"
+                    id="nav-link-home"
+                    className={
+                        isHomePage ? 'nav-link nav-link_active' : 'nav-link'
+                    }
+                >
+                    Accueil
+                </Link>
+                <Link
+                    to="/about"
+                    id="nav-link-about"
+                    className={
+                        isAboutPage ? 'nav-link nav-link_active' : 'nav-link'
+                    }
+                >
+                    A propos
+                </Link>
             </nav>
         </header>
     )
